@@ -1,0 +1,10 @@
+#!/bin/bash
+
+filename=${1%.*}
+fileformat=${1##*.}
+
+if [ $fileformat == 'ui' ]
+then
+	outname=$filename".py"
+	pyuic5 -o $outname $1
+fi

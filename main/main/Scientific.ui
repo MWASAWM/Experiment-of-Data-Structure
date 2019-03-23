@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Scientific</class>
+ <widget class="QWidget" name="Scientific">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -1140,6 +1140,42 @@
    <property name="text">
     <string>x2</string>
    </property>
+  </widget>
+  <widget class="QComboBox" name="calc_mode">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Microsoft YaHei UI</family>
+     <pointsize>18</pointsize>
+    </font>
+   </property>
+   <item>
+    <property name="text">
+     <string>Standard</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Scientific</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Programmer</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Date Calculation</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>

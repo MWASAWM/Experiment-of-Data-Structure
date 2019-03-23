@@ -1,21 +1,25 @@
-from Standard_UI import Ui_MainWindow
-from Science_UI import Ui_Form
+from Standard_UI import Ui_Standard
+from Scientific_UI import Ui_Scientific
+from Programmer_UI import Ui_Programmer
+from DateCalculation_UI import Ui_DateCalculation
+from Menu_UI import Ui_Menu
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 global calc_text
 calc_text=''
 
-class Standard_MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
+class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
 
     def __init__(self):
         super(Standard_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
+        #self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.button_init()
         self.other_init()
         
     def button_init(self):
-        self.pb0.clicked.connect(lambda:lambda:self.msg_input(0))
+        self.pb0.clicked.connect(lambda:self.msg_input(0))
         self.pb1.clicked.connect(lambda:self.msg_input(1))
         self.pb2.clicked.connect(lambda:self.msg_input(2))
         self.pb3.clicked.connect(lambda:self.msg_input(3))
@@ -35,8 +39,19 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.pbpoint.clicked.connect(lambda:self.msg_input('.'))
         self.pbequal.clicked.connect(lambda:self.msg_input('='))
         #self.quit.clicked.connect(lambda:self.msg_input('Q'))
+        self.push_button_menu.clicked.connect(self.change_win)
         
-  
+        
+        
+    def change_win(self):
+        x=self.geometry().x()
+        y=self.geometry().y()
+        global men_win
+        men_win=Menu_MainWindow()
+        men_win.move(x,y)
+        men_win.my_show(self)
+   
+
     def close_win(self):
         self.close()
 
@@ -65,7 +80,7 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
             self.label_2.setText(str(float(calc_text)*100)+'%')
         elif arg=='=':
             self.set_text_size(20)
-            self.label.setText(calc_text+'=')
+            self.label.setText(calc_text)
             self.label_2.setText(str(eval(calc_text)))
             calc_text=self.label_2.text()
             return
@@ -73,9 +88,55 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
             calc_text+=str(arg)
         self.label.setText(calc_text)
 
-
-class Science_MainWindow(QtWidgets.QMainWindow,Ui_Form):
+class Scientific_MainWindow(QtWidgets.QMainWindow,Ui_Scientific):
     def __init__(self):
-        super(Science_MainWindow,self).__init__()
+        super(Scientific_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
+
+class Programmer_MainWindow(QtWidgets.QMainWindow,Ui_Programmer):
+    def __init__(self):
+        super(Programmer_MainWindow,self).__init__()
+        self.setupUi(self)
+        self.retranslateUi(self)
+
+class DateCalculation_MainWindow(QtWidgets.QMainWindow,Ui_DateCalculation):
+    def __init__(self):
+        super(DateCalculation_MainWindow,self).__init__()
+        self.setupUi(self)
+        self.retranslateUi(self)
+
+class Menu_MainWindow(QtWidgets.QMainWindow,Ui_Menu):
+    def __init__(self):
+        super(Menu_MainWindow,self).__init__()
+        self.setupUi(self)
+        self.retranslateUi(self)
+        self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+        self.About.setStyleSheet('text-align:left;')
+        self.button_init()
+
+    def button_init(self):
+        self.listWidget.itemClicked.connect(self.clicked)
+        self.push_button_menu.clicked.connect(self.close_win)
+
+        
+
+    def close_win(self):
+        self.close()
+
+    def my_show(self,pre_win):
+        self.show()
+        global close_win
+        close_win=pre_win
+
+
+    def clicked(self,item):
+        global new_win
+        new_win_name=item.text()+'_MainWindow'
+        new_win=eval(new_win_name+'()')
+        new_win.show()
+        self.close()
+        close_win.close()
+
+
+
