@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 if __name__=='__main__':
     QtCore.QCoreApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling)
-    app=QtWidgets.QApplication(sys.argv)
+    app=QtWidgets.QApplication(sys.argv)    
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
     global cur_win
     cur_win=Standard_MainWindow()

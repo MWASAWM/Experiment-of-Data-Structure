@@ -11,18 +11,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Programmer(object):
     def setupUi(self, Programmer):
         Programmer.setObjectName("Programmer")
-        Programmer.resize(490, 295)
-        self.calc_mode = QtWidgets.QComboBox(Programmer)
-        self.calc_mode.setGeometry(QtCore.QRect(0, 0, 151, 41))
+        Programmer.resize(585, 640)
+        self.push_button_menu = QtWidgets.QPushButton(Programmer)
+        self.push_button_menu.setGeometry(QtCore.QRect(0, 0, 41, 41))
+        self.push_button_menu.setObjectName("push_button_menu")
+        self.mode_name = QtWidgets.QLabel(Programmer)
+        self.mode_name.setGeometry(QtCore.QRect(40, 0, 200, 41))
         font = QtGui.QFont()
-        font.setFamily("Microsoft YaHei UI")
-        font.setPointSize(18)
-        self.calc_mode.setFont(font)
-        self.calc_mode.setObjectName("calc_mode")
-        self.calc_mode.addItem("")
-        self.calc_mode.addItem("")
-        self.calc_mode.addItem("")
-        self.calc_mode.addItem("")
+        font.setPointSize(15)
+        self.mode_name.setFont(font)
+        self.mode_name.setText("")
+        self.mode_name.setObjectName("mode_name")
 
         self.retranslateUi(Programmer)
         QtCore.QMetaObject.connectSlotsByName(Programmer)
@@ -30,8 +29,5 @@ class Ui_Programmer(object):
     def retranslateUi(self, Programmer):
         _translate = QtCore.QCoreApplication.translate
         Programmer.setWindowTitle(_translate("Programmer", "Form"))
-        self.calc_mode.setItemText(0, _translate("Programmer", "Standard"))
-        self.calc_mode.setItemText(1, _translate("Programmer", "Scientific"))
-        self.calc_mode.setItemText(2, _translate("Programmer", "Programmer"))
-        self.calc_mode.setItemText(3, _translate("Programmer", "Date Calculation"))
+        self.push_button_menu.setText(_translate("Programmer", "="))
 

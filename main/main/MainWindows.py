@@ -1,12 +1,24 @@
-from Standard_UI import Ui_Standard
-from Scientific_UI import Ui_Scientific
-from Programmer_UI import Ui_Programmer
-from DateCalculation_UI import Ui_DateCalculation
-from Menu_UI import Ui_Menu
+import time  
+import datetime
+from Standard import Ui_Standard
+from Scientific import Ui_Scientific
+from Programmer import Ui_Programmer
+from DateCalculation import Ui_DateCalculation
+from Menu import Ui_Menu
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 global calc_text
 calc_text=''
+
+def change_win(pre_win):
+    x=pre_win.geometry().x()
+    y=pre_win.geometry().y()
+    global men_win
+    men_win=Menu_MainWindow()
+    men_win.listWidget.setFixedHeight(pre_win.height()-pre_win.push_button_menu.height())
+    men_win.move(x,y)
+    men_win.setFixedHeight(pre_win.height())
+    men_win.my_show(pre_win)
 
 class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
 
@@ -17,6 +29,7 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
         #self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.button_init()
         self.other_init()
+        self.mode_name.setText('Standard')
         
     def button_init(self):
         self.pb0.clicked.connect(lambda:self.msg_input(0))
@@ -39,17 +52,7 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
         self.pbpoint.clicked.connect(lambda:self.msg_input('.'))
         self.pbequal.clicked.connect(lambda:self.msg_input('='))
         #self.quit.clicked.connect(lambda:self.msg_input('Q'))
-        self.push_button_menu.clicked.connect(self.change_win)
-        
-        
-        
-    def change_win(self):
-        x=self.geometry().x()
-        y=self.geometry().y()
-        global men_win
-        men_win=Menu_MainWindow()
-        men_win.move(x,y)
-        men_win.my_show(self)
+        self.push_button_menu.clicked.connect(lambda:change_win(self))
    
 
     def close_win(self):
@@ -93,18 +96,56 @@ class Scientific_MainWindow(QtWidgets.QMainWindow,Ui_Scientific):
         super(Scientific_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
+        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.mode_name.setText('Scientific')
+
 
 class Programmer_MainWindow(QtWidgets.QMainWindow,Ui_Programmer):
     def __init__(self):
         super(Programmer_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
+        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.mode_name.setText('Programmer')
+
 
 class DateCalculation_MainWindow(QtWidgets.QMainWindow,Ui_DateCalculation):
     def __init__(self):
         super(DateCalculation_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
+        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.calendarWidget.selectionChanged.connect(self.showDate_1)
+        self.calendarWidget_2.selectionChanged.connect(self.showDate_2)
+        date=self.calendarWidget.selectedDate()
+        self.date1.setText(str(date.toPyDate()))
+        date=self.calendarWidget_2.selectedDate()
+        self.date2.setText(str(date.toPyDate()))
+
+    def showDate_1(self):
+        date=self.calendarWidget.selectedDate()
+        self.date1.setText(str(date.toPyDate()))
+        self.ans.setText(str(self.Caltime()))
+
+    def showDate_2(self):
+        date=self.calendarWidget_2.selectedDate()
+        self.date2.setText(str(date.toPyDate()))
+        self.ans.setText(str(self.Caltime()))
+
+    def Caltime(self):  
+        date1=self.date1.text()
+        date2=self.date2.text()
+        date1=time.strptime(date1,"%Y-%m-%d")  
+        date2=time.strptime(date2,"%Y-%m-%d")   
+        date1=datetime.datetime(date1[0],date1[1],date1[2])  
+        date2=datetime.datetime(date2[0],date2[1],date2[2])
+        if date1==date2:
+            return 'Same dates'
+        else:
+            ans=str(date2-date1)
+            return ans.split(',')[0]
+
+    
 
 class Menu_MainWindow(QtWidgets.QMainWindow,Ui_Menu):
     def __init__(self):
@@ -112,14 +153,12 @@ class Menu_MainWindow(QtWidgets.QMainWindow,Ui_Menu):
         self.setupUi(self)
         self.retranslateUi(self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
-        self.About.setStyleSheet('text-align:left;')
+        #self.About.setStyleSheet('text-align:left;')
         self.button_init()
 
     def button_init(self):
         self.listWidget.itemClicked.connect(self.clicked)
         self.push_button_menu.clicked.connect(self.close_win)
-
-        
 
     def close_win(self):
         self.close()
@@ -129,13 +168,12 @@ class Menu_MainWindow(QtWidgets.QMainWindow,Ui_Menu):
         global close_win
         close_win=pre_win
 
-
     def clicked(self,item):
         global new_win
         new_win_name=item.text()+'_MainWindow'
         new_win=eval(new_win_name+'()')
         new_win.show()
-        self.close()
+        self.close_win()
         close_win.close()
 
 

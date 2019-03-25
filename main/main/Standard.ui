@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>908</width>
-    <height>652</height>
+    <height>664</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -596,22 +596,23 @@
      <string>=</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QLabel" name="mode_name">
     <property name="geometry">
      <rect>
       <x>40</x>
       <y>0</y>
-      <width>101</width>
+      <width>200</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Microsoft YaHei UI</family>
       <pointsize>15</pointsize>
      </font>
     </property>
     <property name="text">
-     <string>Standard</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -625,6 +626,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Microsoft YaHei UI</family>
       <pointsize>15</pointsize>
      </font>
     </property>
