@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NormalUI_HistoricaoData</class>
+ <widget class="QWidget" name="NormalUI_HistoricaoData">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>769</width>
+    <height>487</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>近三天</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>20</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>近一星期</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>20</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>近一个月</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>20</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>自选日期</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>420</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>删除数据</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>420</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>查看数据</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_7">
+   <property name="geometry">
+    <rect>
+     <x>590</x>
+     <y>420</y>
+     <width>141</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>返回数据</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>110</y>
+     <width>731</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>新建列</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>文件名</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>创建日期</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </column>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

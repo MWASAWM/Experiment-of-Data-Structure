@@ -1,0 +1,121 @@
+#include "gcringbuffer.h"
+
+#include <QDebug>
+
+GCRingBuffer::GCRingBuffer()
+{
+  clear();
+}
+
+void GCRingBuffer::clear(void)
+{
+    head = 0;
+    tail = 0;
+    count = 0;
+    lines = 0;
+}
+
+void GCRingBuffer::waitforline(int timeout = 0)
+{
+    QTime timer;
+
+    if(timeout == 0)
+    {
+        while(1)
+        {
+            QApplication::processEvents();
+            if(lines > 0) break;
+        }
+        return;
+    }
+    timer.start();
+    while(timer.elapsed() < timeout)
+    {
+        QApplication::processEvents();
+        if(lines > 0)
+        {
+            break;
+        }
+    }
+}
+
+int GCRingBuffer::size(void)
+{
+    return count;
+}
+
+int GCRingBuffer::numLines(void)
+{
+    return lines;
+}
+
+char GCRingBuffer::getch(void)
+{
+    char c;  
+    if(count == 0) return(0);
+    c = buffer[tail++];
+    completeGCIN.append(&c);
+    if(tail >= rbSIZE) tail = 0;
+    count--;
+    if(completeGCIN.length()>=16)
+    {
+    int datalength=completeGCIN.mid(6,4).toInt(nullptr,16);
+    if(completeGCIN.length()==datalength*2+14)
+    {
+        int datalength=completeGCIN.mid(6,4).toInt(nullptr,16);
+        QByteArray check=QByteArray::fromHex(completeGCIN.toLatin1().data());
+        for(int i=0;i<datalength+4;i++)
+        check[0]=check[0]+check[i+1];
+        if(check[0]==check[datalength+4+1])
+        {lines--;
+        completeGCIN.clear();
+    }
+    }
+    }
+    return c;
+}
+
+int GCRingBuffer::putch(char c)
+{
+    //if(c == 0x06) return(count);
+    //if(c == 0x15) return(count);
+    //if(c == '\r') return(count);        // ignore \r
+    if(count >= rbSIZE) return(-1);
+    completeGCOUT.append(&c);
+    if(completeGCOUT.length()>=16)
+    {
+    int datalength=completeGCOUT.mid(6,4).toInt(nullptr,16);
+    if(completeGCOUT.length()==datalength*2+14)
+    {
+        int datalength=completeGCOUT.mid(6,4).toInt(nullptr,16);
+        QByteArray check=QByteArray::fromHex(completeGCOUT.toLatin1().data());
+        for(int i=0;i<datalength+4;i++)
+        check[0]=check[0]+check[i+1];
+        if(check[0]==check[datalength+4+1])
+        {lines++;
+        completeGCOUT.clear();
+    }
+    }
+    }
+    
+    buffer[head++] = c;
+    if(head >= rbSIZE) head = 0;
+    count++;
+    return(count);
+}
+
+QString GCRingBuffer::getline(void)
+{
+    QString str="";
+    char c;
+
+    if(lines <= 0) return str;
+    while(1)
+    {
+        c = getch();
+        //if(c == '\n') break;
+        if(count <= 0) break;
+        str += c;
+    }
+    return str;
+}

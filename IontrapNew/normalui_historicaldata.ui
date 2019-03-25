@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NormalUI_HistoricalData</class>
+ <widget class="QWidget" name="NormalUI_HistoricalData">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>1593</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>苹方 常规</family>
+    <pointsize>14</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#NormalUI_HistoricalData
+{
+
+	background-color: rgb(255, 255, 255);
+
+}</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>10</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>近一星期</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>10</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>近三天</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>690</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>删除数据</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>690</y>
+     <width>111</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>查看数据</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SelectDate">
+   <property name="geometry">
+    <rect>
+     <x>910</x>
+     <y>10</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>自选日期</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_7">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>690</y>
+     <width>131</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>返回</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>10</y>
+     <width>100</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string>近一个月</string>
+   </property>
+  </widget>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>12</x>
+     <y>80</y>
+     <width>1000</width>
+     <height>581</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QHeaderView::section
+{
+background-color: rgb(212, 211, 211);	
+border-color: rgb(212, 211, 211);
+border:0.4px solid;
+
+
+}
+QTableWidget::item::selected      
+{
+
+
+
+    color:rgb(255, 255, 255)   ;                    
+    background: rgb(0, 158, 214);
+
+       
+}
+</string>
+   </property>
+   <property name="verticalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="horizontalScrollBarPolicy">
+    <enum>Qt::ScrollBarAlwaysOff</enum>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <attribute name="horizontalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderDefaultSectionSize">
+    <number>300</number>
+   </attribute>
+   <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="horizontalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderCascadingSectionResizes">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderDefaultSectionSize">
+    <number>50</number>
+   </attribute>
+   <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+    <bool>false</bool>
+   </attribute>
+   <attribute name="verticalHeaderStretchLastSection">
+    <bool>false</bool>
+   </attribute>
+   <row>
+    <property name="text">
+     <string>1</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>2</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>3</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>5</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>6</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>7</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>8</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>12</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>13</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>14</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>15</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <row>
+    <property name="text">
+     <string>新建行</string>
+    </property>
+   </row>
+   <column>
+    <property name="text">
+     <string>序号</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>文件名</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>创建时间</string>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+   </column>
+  </widget>
+  <widget class="QGroupBox" name="CalendarGroup">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>780</y>
+     <width>1024</width>
+     <height>768</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QGroupBox{
+background-color: rgb(238, 239, 239);
+ 
+    }</string>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QCalendarWidget" name="calendarWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1024</width>
+      <height>651</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QCalendarWidget QTableView 
+{
+ alternate-background-color: rgb(238, 239, 239);
+ selection-background-color: rgb(0, 158, 214);
+ selection-color: rgb(255, 255, 255);
+font: 26pt &quot;苹方 常规&quot;;
+
+
+    
+}
+QCalendarWidget QWidget#qt_calendar_navigationbar
+{
+background-color: rgb(0, 158, 214);
+
+}
+QToolButton#qt_calendar_monthbutton,#qt_calendar_yearbutton{
+	font: 20pt &quot;苹方 常规&quot;;
+
+}
+
+/*左右两边箭头替换*/
+QToolButton#qt_calendar_prevmonth{
+ icon-size:40px 40px;
+ border:0px;
+ qproperty-icon:url(:/image/arrowhead_left.png); u
+}
+QToolButton#qt_calendar_nextmonth{
+ icon-size:40px 40px;
+ border:0px;
+ qproperty-icon:url(:/image/arrowhead_right.png);
+}
+QMenu{
+background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0);
+	font: 16pt &quot;苹方 常规&quot;;
+
+
+	selection-background-color: rgb(0, 158, 214);
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Accept">
+    <property name="geometry">
+     <rect>
+      <x>660</x>
+      <y>670</y>
+      <width>171</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+    </property>
+    <property name="text">
+     <string>确定</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Reject">
+    <property name="geometry">
+     <rect>
+      <x>843</x>
+      <y>669</y>
+      <width>171</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>苹方 常规</family>
+      <pointsize>18</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+	background-color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);
+border-radius:15px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+    </property>
+    <property name="text">
+     <string>取消</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

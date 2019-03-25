@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>NormalUI</class>
+ <widget class="QWidget" name="NormalUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>768</height>
+   </rect>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/image/panff.jpg</normaloff>:/image/panff.jpg</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#NormalUI{background-color: rgb(255, 255, 255);}</string>
+  </property>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>140</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/选择方法常态.png);
+
+
+border-radius:43.2px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/选择方法按下.png);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>720</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	
+	border-image: url(:/uiicon/image/激活方法.jpg);
+
+border-radius:50px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+ background-color:rgb(255, 255, 255)
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+QPushButton:disabled
+{
+border-image: url(:/image/panff.jpg);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>140</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/运行方法常态.png);
+
+
+border-radius:43.2px;
+  
+}
+
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/运行方法按下.png);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+
+
+QPushButton:disabled
+{
+border-image: url(:/image/运行方法不可用.png);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>528</x>
+     <y>140</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/停止方法常态.png);
+
+
+border-radius:43.2px;
+  
+}
+
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/停止方法按下.png);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+QPushButton:disabled
+{
+border-image: url(:/image/停止方法不可用.png);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>776</x>
+     <y>140</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/历史数据常态.png);
+
+
+border-radius:43.2px;
+  
+}
+
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/历史数据按下.png);
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>420</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/仪器状态常态.png);
+
+
+border-radius:43.2px;
+  
+}
+
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/仪器状态按下.png);
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_7">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>730</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/uiicon/image/待机.jpg);
+
+border-radius:50px;
+  
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+ background-color:rgb(255, 255, 255)
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+ background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_8">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>420</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/关机常态.png);
+
+    border-radius:43.2px;
+  
+}
+
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/关机按下.png);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_9">
+   <property name="geometry">
+    <rect>
+     <x>528</x>
+     <y>420</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/高级功能常态.png);
+
+
+border-radius:43.2px;
+  
+}
+
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/高级功能按下.png);
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_10">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>776</x>
+     <y>420</y>
+     <width>216</width>
+     <height>216</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+	/*背景色*/
+	border-image: url(:/image/退出常态.png);
+
+
+border-radius:43.2px;
+  
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+	border-image: url(:/image/退出按下.png);
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(238, 239, 239);
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>720</y>
+     <width>1280</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(238, 239, 239);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>15</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>16</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>主菜单</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>180</x>
+     <y>15</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>真空度</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>15</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>当前方法</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>730</y>
+     <width>341</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>宁波盘福生物科技有限公司   版权所有</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Vacuum">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>15</y>
+     <width>120</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(255, 255, 255);
+border:2px solid ;
+border-radius:2px;
+border-color: rgb(233, 232, 231);
+</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="CurrentMenthodName">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>15</y>
+     <width>120</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+background-color: rgb(255, 255, 255);
+border:2px solid ;
+border-radius:2px;
+border-color: rgb(233, 232, 231);
+</string>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Datetime">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>15</y>
+     <width>121</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>18.12.12 10:39</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="BatteryShell">
+   <property name="geometry">
+    <rect>
+     <x>934</x>
+     <y>15</y>
+     <width>52</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/image/电池.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Battery">
+   <property name="geometry">
+    <rect>
+     <x>939</x>
+     <y>17</y>
+     <width>41</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>100%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="Clock">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>16</y>
+     <width>20</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border-image: url(:/image/时钟.png);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

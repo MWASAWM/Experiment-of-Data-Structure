@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MessageDialog</class>
+ <widget class="QDialog" name="MessageDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>150</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>消息</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/sliders/image/roundslider.png</normaloff>:/sliders/image/roundslider.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">#MessageDialog
+{
+background-color: rgb(238, 239, 239);
+}</string>
+  </property>
+  <widget class="QLabel" name="Message">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>20</y>
+     <width>300</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>提示</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>80</y>
+     <width>100</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>苹方 常规</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+/*按钮无任何操作时*/ 
+/*背景色*/
+
+border-radius:15px;
+ background-color:rgb(0, 158, 214);
+		color: rgb(255, 255, 255);
+}
+QPushButton:hover
+{ /*鼠标悬停在按钮上时*/   
+
+}
+ QPushButton:pressed
+{ /*按钮被按下时*/   
+  background-color:rgb(0, 158, 214);
+	color: rgb(255, 255, 255);
+}
+QPushButton:checked
+{
+
+ background-color: rgb(238, 239, 239);
+	color: rgb(0, 0, 0); 
+}</string>
+   </property>
+   <property name="text">
+    <string>确定</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MessageDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>149</x>
+     <y>99</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>149</x>
+     <y>74</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
