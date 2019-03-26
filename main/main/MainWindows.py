@@ -10,7 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 global calc_text
 calc_text=''
 
-def change_win(pre_win):
+def show_menu(pre_win):
     x=pre_win.geometry().x()
     y=pre_win.geometry().y()
     global men_win
@@ -26,10 +26,11 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
         super(Standard_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
-        #self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         self.button_init()
         self.other_init()
         self.mode_name.setText('Standard')
+        self.setWindowTitle('Calculator')
+        #self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
         
     def button_init(self):
         self.pb0.clicked.connect(lambda:self.msg_input(0))
@@ -42,8 +43,8 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
         self.pb7.clicked.connect(lambda:self.msg_input(7))
         self.pb8.clicked.connect(lambda:self.msg_input(8))
         self.pb9.clicked.connect(lambda:self.msg_input(9))
-        self.pbac.clicked.connect(lambda:self.msg_input('AC'))
-        self.pbdel.clicked.connect(lambda:self.msg_input('DEL'))
+        self.pbce.clicked.connect(lambda:self.msg_input('CE'))
+        self.pbdel.clicked.connect(lambda:self.msg_input('Backspace'))
         self.pb100.clicked.connect(lambda:self.msg_input('%'))
         self.pbdivision.clicked.connect(lambda:self.msg_input('/'))
         self.pbmultiply.clicked.connect(lambda:self.msg_input('*'))
@@ -51,8 +52,11 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
         self.pbaddition.clicked.connect(lambda:self.msg_input('+'))
         self.pbpoint.clicked.connect(lambda:self.msg_input('.'))
         self.pbequal.clicked.connect(lambda:self.msg_input('='))
-        #self.quit.clicked.connect(lambda:self.msg_input('Q'))
-        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.pbminus.clicked.connect(lambda:self.msg_input('±'))
+        self.pbroot.clicked.connect(lambda:self.msg_input('√'))
+        self.pbsquare.clicked.connect(lambda:self.msg_input('square'))
+        self.pbreciprocal.clicked.connect(lambda:self.msg_input('1/x'))
+        self.push_button_menu.clicked.connect(lambda:show_menu(self))
    
 
     def close_win(self):
@@ -70,17 +74,23 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
 
     def msg_input(self,arg):
         global calc_text
-        if arg=='AC':
+        if arg=='CE':
             calc_text=''
             self.label.setText('')
             self.label_2.setText('')
             self.set_text_size(36)
-        elif arg=='Q':
-            qApp.quit()
-        elif arg=='DEL':
+        elif arg=='Backspace':
             calc_text=calc_text[:-1]
         elif arg=='%':
             self.label_2.setText(str(float(calc_text)*100)+'%')
+        elif arg=='±':
+            return
+        elif arg=='square':
+            return
+        elif arg=='1/x':
+            return
+        elif arg=='√':
+            return
         elif arg=='=':
             self.set_text_size(20)
             self.label.setText(calc_text)
@@ -89,14 +99,15 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
             return
         else:
             calc_text+=str(arg)
-        self.label.setText(calc_text)
+            self.label.setText(calc_text)
 
 class Scientific_MainWindow(QtWidgets.QMainWindow,Ui_Scientific):
     def __init__(self):
         super(Scientific_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
-        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.push_button_menu.clicked.connect(lambda:show_menu(self))
+        self.setWindowTitle('Calculator')
         self.mode_name.setText('Scientific')
 
 
@@ -105,8 +116,9 @@ class Programmer_MainWindow(QtWidgets.QMainWindow,Ui_Programmer):
         super(Programmer_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
-        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.push_button_menu.clicked.connect(lambda:show_menu(self))
         self.mode_name.setText('Programmer')
+        self.setWindowTitle('Calculator')
 
 
 class DateCalculation_MainWindow(QtWidgets.QMainWindow,Ui_DateCalculation):
@@ -114,7 +126,8 @@ class DateCalculation_MainWindow(QtWidgets.QMainWindow,Ui_DateCalculation):
         super(DateCalculation_MainWindow,self).__init__()
         self.setupUi(self)
         self.retranslateUi(self)
-        self.push_button_menu.clicked.connect(lambda:change_win(self))
+        self.setWindowTitle('Calculator')
+        self.push_button_menu.clicked.connect(lambda:show_menu(self))
         self.calendarWidget.selectionChanged.connect(self.showDate_1)
         self.calendarWidget_2.selectionChanged.connect(self.showDate_2)
         date=self.calendarWidget.selectedDate()
