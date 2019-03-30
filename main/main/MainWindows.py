@@ -89,8 +89,6 @@ class Standard_MainWindow(QtWidgets.QMainWindow,Ui_Standard):
             return
         elif arg=='1/x':
             return
-        elif arg=='√':
-            return
         elif arg=='=':
             self.set_text_size(20)
             self.label.setText(calc_text)

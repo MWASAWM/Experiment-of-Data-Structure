@@ -288,9 +288,16 @@ class Ui_MainWindow(object):
         self.actionExport.setObjectName("actionExport")
         self.actionShutdown = QtWidgets.QAction(MainWindow)
         self.actionShutdown.setObjectName("actionShutdown")
+        self.actionQuit_2 = QtWidgets.QAction(MainWindow)
+        self.actionQuit_2.setObjectName("actionQuit_2")
+        self.actionQuit_3 = QtWidgets.QAction(MainWindow)
+        self.actionQuit_3.setObjectName("actionQuit_3")
+        self.Quit = QtWidgets.QAction(MainWindow)
+        self.Quit.setObjectName("Quit")
         self.menuManagement.addAction(self.actionImport)
         self.menuManagement.addAction(self.actionExport)
         self.menuManagement.addAction(self.actionShutdown)
+        self.menuManagement.addAction(self.Quit)
         self.menubar.addAction(self.menuManagement.menuAction())
 
         self.retranslateUi(MainWindow)
@@ -298,7 +305,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle('Student Information Management System')
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.Add.setText(_translate("MainWindow", "Add"))
         self.Change.setText(_translate("MainWindow", "Change"))
         self.Delete.setText(_translate("MainWindow", "Delete"))
@@ -419,4 +426,7 @@ class Ui_MainWindow(object):
         self.actionSave.setText(_translate("MainWindow", "Save"))
         self.actionExport.setText(_translate("MainWindow", "Export"))
         self.actionShutdown.setText(_translate("MainWindow", "Shutdown"))
+        self.actionQuit_2.setText(_translate("MainWindow", "Quit"))
+        self.actionQuit_3.setText(_translate("MainWindow", "Quit"))
+        self.Quit.setText(_translate("MainWindow", "Quit"))
 

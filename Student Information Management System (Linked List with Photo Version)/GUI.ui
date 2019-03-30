@@ -901,6 +901,7 @@
     <addaction name="actionImport"/>
     <addaction name="actionExport"/>
     <addaction name="actionShutdown"/>
+    <addaction name="Quit"/>
    </widget>
    <addaction name="menuManagement"/>
   </widget>
@@ -943,6 +944,21 @@
   <action name="actionShutdown">
    <property name="text">
     <string>Shutdown</string>
+   </property>
+  </action>
+  <action name="actionQuit_2">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionQuit_3">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="Quit">
+   <property name="text">
+    <string>Quit</string>
    </property>
   </action>
  </widget>

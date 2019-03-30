@@ -110,7 +110,10 @@ class MainWindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.actionExport.setShortcut('Ctrl+E')
         self.actionShutdown.triggered.connect(self.shutdown)
         self.actionShutdown.setShortcut('Ctrl+S')
+        self.Quit.triggered.connect(self.close)
+        self.Quit.setShortcut('Ctrl+Q')
         self.listWidget.itemClicked.connect(self.clicked)
+        
 
     def shutdown(self):
         database.clear()
