@@ -1,6 +1,6 @@
 # Experiment-of-Data-Structure
 ## Student Information Management System
 ### Project Image
-![](https://github.com/MWASAWM/Experiment-of-Data-Structure/blob/master/README_IMAGE/Capture.JPG)
+![](https://github.com/MWASAWM/Experiment-of-Data-Structure/blob/master/README_IMAGE/Capture.JPG style="zoom:50%")
 
 Datastructure : Linked List   
