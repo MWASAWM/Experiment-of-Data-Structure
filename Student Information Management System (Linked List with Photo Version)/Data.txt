@@ -1,7 +1,0 @@
-001 ChrissyCostanza Female 24 ./image/ChrissyCostanza.jpg
-002 刘德华 Male 59 ./image/刘德华.jpg
-003 郑爽 Female 29 ./image/郑爽.jpg
-004 张钧甯 Female 27 ./image/张钧甯.jpg
-005 李沁 Female 27 ./image/李沁.jpg
-006 周星驰 Male 57 ./image/周星驰.jpg
-007 詹姆斯邦德 Male 37 ./image/詹姆斯邦德.jpg
